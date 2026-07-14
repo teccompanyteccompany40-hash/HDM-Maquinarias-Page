@@ -16,9 +16,9 @@ function App() {
   return (
     <>
       <Header />
-      <TablonAnuncios />
       <Hero />
       <MarcasAsociadas />
+      <TablonAnuncios />
       <ProductosDestacados />
       <AlbumServicios />
       <CardRepuestos />

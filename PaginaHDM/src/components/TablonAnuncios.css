@@ -1,47 +1,149 @@
 .tablon {
+  position: relative;
   width: 100%;
-  height: 42px;
-  background: var(--yellow);
-  display: flex;
-  align-items: center;
+  height: 380px;
   overflow: hidden;
-}
-
-.tablon-icon {
-  flex-shrink: 0;
-  height: 100%;
-  width: 50px;
   background: var(--black);
-  color: var(--yellow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .tablon-track {
-  flex: 1;
-  overflow: hidden;
-  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.tablon-content {
-  display: inline-flex;
-  gap: 60px;
-  padding-left: 30px;
-  animation: scroll-left 28s linear infinite;
+.tablon-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: #2a2a2a;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.7s ease, transform 6s ease;
+  display: flex;
+  align-items: flex-end;
 }
 
-.tablon-content span {
-  font-weight: 700;
-  font-size: 14px;
+.tablon-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.tablon-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.15) 55%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.tablon-slide-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 70px 44px;
+  max-width: 700px;
+}
+
+.tablon-slide-content h3 {
+  color: var(--white);
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.tablon-slide-content h3::before {
+  content: "";
+  display: inline-block;
+  width: 34px;
+  height: 4px;
+  background: var(--yellow);
+  margin-bottom: 12px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.tablon-slide-content p {
+  color: #e6e6e6;
+  font-size: 15.5px;
+}
+
+.tablon-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: 0.25s;
+  z-index: 3;
+}
+
+.tablon-arrow:hover {
+  background: var(--yellow);
   color: var(--black);
 }
 
-@keyframes scroll-left {
-  from {
-    transform: translateX(0);
+.tablon-arrow.left {
+  left: 24px;
+}
+
+.tablon-arrow.right {
+  right: 24px;
+}
+
+.tablon-dots {
+  position: absolute;
+  bottom: 18px;
+  right: 70px;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.tablon-dots button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  transition: 0.25s;
+  padding: 0;
+}
+
+.tablon-dots button.active {
+  background: var(--yellow);
+  width: 24px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .tablon {
+    height: 300px;
   }
-  to {
-    transform: translateX(-50%);
+  .tablon-slide-content {
+    padding: 0 24px 34px;
+  }
+  .tablon-slide-content h3 {
+    font-size: 22px;
+  }
+  .tablon-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  .tablon-arrow.left {
+    left: 10px;
+  }
+  .tablon-arrow.right {
+    right: 10px;
+  }
+  .tablon-dots {
+    right: 20px;
   }
 }
