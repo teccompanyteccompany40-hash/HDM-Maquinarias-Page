@@ -7,6 +7,12 @@ type Mensaje = { autor: "bot" | "user"; texto: string };
 const respuestasRapidas = [
   "¿Tienen repuestos para Caterpillar?",
   "¿Cuál es el tiempo de entrega?",
+  "¿Hacen envíos a provincia?",
+  "¿Tienen repuestos originales y alternativos?",
+  "¿Cómo cotizo un repuesto?",
+  "¿Qué marcas de maquinaria manejan?",
+  "¿Ofrecen garantía en sus productos?",
+  "¿Cuáles son sus formas de pago?",
   "Quiero hablar con un asesor",
 ];
 
@@ -15,6 +21,18 @@ const respuestasPredeterminadas: Record<string, string> = {
     "Sí, contamos con stock de repuestos originales y alternativos para Caterpillar. ¿Qué componente necesitas?",
   "¿Cuál es el tiempo de entrega?":
     "El despacho a nivel nacional toma entre 24 y 48 horas dependiendo de tu ubicación.",
+  "¿Hacen envíos a provincia?":
+    "Sí, despachamos a todo el Perú a través de agencias de transporte. El costo y tiempo depende del destino.",
+  "¿Tienen repuestos originales y alternativos?":
+    "Sí, manejamos ambas opciones para que elijas según tu presupuesto y necesidad técnica.",
+  "¿Cómo cotizo un repuesto?":
+    "Puedes agregar los repuestos a tu carrito de cotización desde el catálogo y enviarnos la solicitud, o escribirnos directamente por WhatsApp.",
+  "¿Qué marcas de maquinaria manejan?":
+    "Trabajamos con las principales marcas del sector: Caterpillar, Komatsu, Volvo, Hitachi, entre otras. Puedes verlas en la sección de marcas asociadas.",
+  "¿Ofrecen garantía en sus productos?":
+    "Sí, todos nuestros repuestos cuentan con garantía. Las condiciones varían según si es un producto original o alternativo.",
+  "¿Cuáles son sus formas de pago?":
+    "Aceptamos transferencia bancaria, depósito y pago con tarjeta. Para compras corporativas también manejamos crédito según evaluación.",
   "Quiero hablar con un asesor":
     "Perfecto, puedes escribirnos por WhatsApp o dejar tu número y un asesor te contactará.",
 };
@@ -43,7 +61,9 @@ export default function ChatBot({ onClose }: { onClose: () => void }) {
     <div className="chatbot-window">
       <div className="chatbot-header">
         <div className="chatbot-header-info">
-          <Bot size={20} />
+          <span className="chatbot-avatar">
+            <Bot size={26} />
+          </span>
           <div>
             <strong>Asistente HDM</strong>
             <span>En línea</span>

@@ -1,4 +1,5 @@
 import "./SobreNosotros.css";
+import { Link } from "react-router-dom";
 import { CheckCircle2 } from "lucide-react";
 
 const puntos = [
@@ -41,7 +42,7 @@ export default function SobreNosotros() {
             ))}
           </ul>
 
-          <button className="btn-primary">Conócenos más</button>
+          <Link to="/nosotros" className="btn-primary">Conócenos más</Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import "./ProductosDestacados.css";
+import { Link } from "react-router-dom";
 import { Cog, Filter, Droplets, Link2 } from "lucide-react";
 
 const productos = [
@@ -44,9 +45,9 @@ export default function ProductosDestacados() {
               </div>
               <h3>{p.nombre}</h3>
               <p>{p.desc}</p>
-              <a href="#" className="producto-link">
+              <Link to="/repuestos" className="producto-link">
                 Ver más →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

@@ -1,30 +1,54 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import TablonAnuncios from "./components/TablonAnuncios";
-import MarcasAsociadas from "./components/MarcasAsociadas";
-import ProductosDestacados from "./components/ProductosDestacados";
-import AlbumServicios from "./components/AlbumServicios";
-import CardRepuestos from "./components/CardRepuestos";
-import AlbumSectores from "./components/AlbumSectores";
-import SobreNosotros from "./components/SobreNosotros";
-import BlogDestacados from "./components/BlogDestacados";
 import Footer from "./components/Footer";
 import FloatingContacts from "./components/FloatingContacts";
+import Home from "./pages/Home";
+import Nosotros from "./pages/Nosotros";
+import Maquinaria from "./pages/Maquinaria";
+import MaquinariaDetalle from "./pages/MaquinariaDetalle";
+import Repuestos from "./pages/Repuestos";
+import RepuestoDetalle from "./pages/RepuestoDetalle";
+import Novedades from "./pages/Novedades";
+import Promociones from "./pages/Promociones";
+import Cotizacion from "./pages/Cotizacion";
+import Contacto from "./pages/Contacto";
+
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 80);
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+}
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
-      <Hero />
-      <MarcasAsociadas />
-      <TablonAnuncios />
-      <ProductosDestacados />
-      <AlbumServicios />
-      <CardRepuestos />
-      <AlbumSectores />
-      <SobreNosotros />
-      <BlogDestacados />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/maquinaria" element={<Maquinaria />} />
+        <Route path="/maquinaria/:id" element={<MaquinariaDetalle />} />
+        <Route path="/repuestos" element={<Repuestos />} />
+        <Route path="/repuestos/:id" element={<RepuestoDetalle />} />
+        <Route path="/novedades" element={<Novedades />} />
+        <Route path="/promociones" element={<Promociones />} />
+        <Route path="/cotizacion" element={<Cotizacion />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
       <Footer />
       <FloatingContacts />
     </>

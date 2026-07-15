@@ -1,11 +1,10 @@
 import "./AlbumSectores.css";
-import { Mountain, HardHat, TreePine, Factory } from "lucide-react";
+import { Mountain, HardHat, Truck } from "lucide-react";
 
 const sectores = [
   { icon: Mountain, nombre: "Minería" },
   { icon: HardHat, nombre: "Construcción" },
-  { icon: TreePine, nombre: "Forestal" },
-  { icon: Factory, nombre: "Industrial" },
+  { icon: Truck, nombre: "Transporte" },
 ];
 
 export default function AlbumSectores() {

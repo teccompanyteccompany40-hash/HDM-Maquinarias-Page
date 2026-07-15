@@ -82,6 +82,8 @@
   background: var(--yellow);
   color: var(--black);
   border: none;
+  display: inline-block;
+  text-align: center;
   padding: 15px 30px;
   border-radius: 8px;
   font-weight: 700;
@@ -98,6 +100,8 @@
   background: transparent;
   color: var(--white);
   border: 2px solid var(--white);
+  display: inline-block;
+  text-align: center;
   padding: 15px 30px;
   border-radius: 8px;
   font-weight: 700;

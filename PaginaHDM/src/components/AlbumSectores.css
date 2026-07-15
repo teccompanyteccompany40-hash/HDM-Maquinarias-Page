@@ -1,6 +1,7 @@
 .sectores-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 22px;
 }
 
@@ -11,6 +12,7 @@
   padding: 40px 20px;
   text-align: center;
   transition: 0.3s;
+  width: 220px;
 }
 
 .sector-card svg {
@@ -29,7 +31,7 @@
 }
 
 @media (max-width: 900px) {
-  .sectores-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .sector-card {
+    width: 160px;
   }
 }

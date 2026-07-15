@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { Link } from "react-router-dom";
 import { ShieldCheck, Truck, Wrench } from "lucide-react";
 
 export default function Hero() {
@@ -16,8 +17,8 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <button className="btn-primary">Solicitar cotización</button>
-          <button className="btn-secondary">Ver catálogo</button>
+          <Link to="/repuestos" className="btn-primary">Ver catálogo de repuestos</Link>
+          <Link to="/maquinaria" className="btn-secondary">Ver catálogo de maquinaria</Link>
         </div>
 
         <div className="hero-stats">

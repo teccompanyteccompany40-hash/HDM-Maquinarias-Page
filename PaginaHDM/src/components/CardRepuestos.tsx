@@ -1,23 +1,29 @@
 import "./CardRepuestos.css";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Package } from "lucide-react";
+import repuestosData from "../data/repuestos.json";
+import { useCotizacion } from "../context/CotizacionContext";
 
-const categorias = ["Todos", "Motor", "Hidráulico", "Tren de rodaje", "Eléctrico"];
+interface Repuesto {
+  id: number;
+  codigo: string;
+  marca: string;
+  nombre: string;
+  categoria: string;
+}
 
-const repuestos = [
-  { nombre: "Filtro de aceite HD", cat: "Motor", codigo: "FA-2231" },
-  { nombre: "Bomba hidráulica principal", cat: "Hidráulico", codigo: "BH-5541" },
-  { nombre: "Zapata de oruga", cat: "Tren de rodaje", codigo: "ZO-1190" },
-  { nombre: "Alternador 24V", cat: "Eléctrico", codigo: "AL-3320" },
-  { nombre: "Kit de empaquetadura de motor", cat: "Motor", codigo: "KE-4410" },
-  { nombre: "Cilindro hidráulico de brazo", cat: "Hidráulico", codigo: "CH-7761" },
-];
+const repuestos = repuestosData as Repuesto[];
+const categorias = ["Todos", "Motor", "Filtros", "Sistema Hidráulico", "Tren de Rodaje", "Sistema Eléctrico"];
 
 export default function CardRepuestos() {
   const [activa, setActiva] = useState("Todos");
+  const { agregarItem, items } = useCotizacion();
 
-  const filtrados =
-    activa === "Todos" ? repuestos : repuestos.filter((r) => r.cat === activa);
+  const destacados = useMemo(() => {
+    const base = activa === "Todos" ? repuestos : repuestos.filter((r) => r.categoria === activa);
+    return base.slice(0, 6);
+  }, [activa]);
 
   return (
     <section className="repuestos">
@@ -25,7 +31,7 @@ export default function CardRepuestos() {
         <div className="section-title">
           <span className="tag">Inventario</span>
           <h2>
-            Card de <span>repuestos</span>
+            Repuestos <span>destacados</span>
           </h2>
         </div>
 
@@ -42,17 +48,42 @@ export default function CardRepuestos() {
         </div>
 
         <div className="repuestos-grid">
-          {filtrados.map((r) => (
-            <div className="repuesto-card" key={r.codigo}>
-              <div className="repuesto-thumb">
-                <Package size={34} />
+          {destacados.map((r) => {
+            const yaAgregado = items.some((i) => i.uid === `repuesto-${r.id}`);
+            return (
+              <div className="repuesto-card" key={r.id}>
+                <Link to={`/repuestos/${r.id}`} className="repuesto-thumb">
+                  <Package size={34} />
+                </Link>
+                <span className="repuesto-cat">{r.categoria}</span>
+                <Link to={`/repuestos/${r.id}`}>
+                  <h4>{r.nombre}</h4>
+                </Link>
+                <p>Código: {r.codigo || "—"}</p>
+                <button
+                  className="btn-primary small"
+                  onClick={() =>
+                    agregarItem({
+                      tipo: "repuesto",
+                      id: r.id,
+                      nombre: r.nombre,
+                      codigo: r.codigo,
+                      marca: r.marca,
+                      categoria: r.categoria,
+                    })
+                  }
+                >
+                  {yaAgregado ? "Agregado ✓" : "Cotizar"}
+                </button>
               </div>
-              <span className="repuesto-cat">{r.cat}</span>
-              <h4>{r.nombre}</h4>
-              <p>Código: {r.codigo}</p>
-              <button className="btn-primary small">Cotizar</button>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: 34 }}>
+          <Link to="/repuestos" className="btn-secondary-dark-inline">
+            Ver catálogo completo de repuestos
+          </Link>
         </div>
       </div>
     </section>

@@ -17,11 +17,31 @@
   margin-bottom: 24px;
 }
 
-.marcas-grid {
+.marcas-track-mask {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marcas-track {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
   gap: 18px;
+  width: max-content;
+  animation: marcas-scroll 28s linear infinite;
+}
+
+.marcas-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marcas-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .marca-item {
@@ -33,6 +53,7 @@
   font-size: 14px;
   color: var(--black);
   letter-spacing: 0.5px;
+  white-space: nowrap;
   transition: 0.3s;
 }
 
@@ -40,6 +61,7 @@
   border-color: var(--yellow);
   color: #8a6d00;
   transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 768px) {
