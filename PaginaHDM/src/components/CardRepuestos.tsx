@@ -11,6 +11,7 @@ interface Repuesto {
   marca: string;
   nombre: string;
   categoria: string;
+  imagen?: string;
 }
 
 const repuestos = repuestosData as Repuesto[];
@@ -53,7 +54,11 @@ export default function CardRepuestos() {
             return (
               <div className="repuesto-card" key={r.id}>
                 <Link to={`/repuestos/${r.id}`} className="repuesto-thumb">
-                  <Package size={34} />
+                  {r.imagen ? (
+                    <img src={r.imagen} alt={r.nombre} />
+                  ) : (
+                    <Package size={34} />
+                  )}
                 </Link>
                 <span className="repuesto-cat">{r.categoria}</span>
                 <Link to={`/repuestos/${r.id}`}>

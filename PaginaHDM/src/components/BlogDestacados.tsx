@@ -1,23 +1,9 @@
 import "./BlogDestacados.css";
+import { Link } from "react-router-dom";
 import { Calendar, ArrowRight } from "lucide-react";
+import { blogPosts } from "../data/blog";
 
-const posts = [
-  {
-    fecha: "02 Jul 2026",
-    titulo: "Cómo elegir el filtro hidráulico correcto",
-    resumen: "Guía práctica para identificar el filtro adecuado según tu equipo.",
-  },
-  {
-    fecha: "24 Jun 2026",
-    titulo: "Mantenimiento preventivo: ahorra en reparaciones",
-    resumen: "Claves para reducir tiempos de inactividad de tu maquinaria.",
-  },
-  {
-    fecha: "10 Jun 2026",
-    titulo: "Repuestos originales vs. alternativos",
-    resumen: "Ventajas y diferencias para tomar la mejor decisión.",
-  },
-];
+const posts = blogPosts.slice(0, 3);
 
 export default function BlogDestacados() {
   return (
@@ -32,7 +18,7 @@ export default function BlogDestacados() {
 
         <div className="blog-grid">
           {posts.map((p) => (
-            <article className="blog-card" key={p.titulo}>
+            <article className="blog-card" key={p.id}>
               <div className="blog-thumb" />
               <div className="blog-body">
                 <span className="blog-fecha">
@@ -40,12 +26,18 @@ export default function BlogDestacados() {
                 </span>
                 <h4>{p.titulo}</h4>
                 <p>{p.resumen}</p>
-                <a href="#">
+                <Link to={`/blog/${p.id}`}>
                   Leer más <ArrowRight size={15} />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="blog-ver-todos">
+          <Link to="/blog" className="btn-outline-sm">
+            Ver todos los artículos <ArrowRight size={15} />
+          </Link>
         </div>
       </div>
     </section>

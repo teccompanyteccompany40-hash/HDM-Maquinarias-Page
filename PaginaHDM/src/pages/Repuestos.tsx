@@ -158,9 +158,15 @@ export default function Repuestos() {
                   return (
                     <div className="cat-card" key={r.id}>
                       <Link to={`/repuestos/${r.id}`} className="cat-card-media">
-                        <span className="cat-card-partnum">Part Number</span>
-                        <span className="cat-card-code">{r.codigo || "—"}</span>
-                        <span className="cat-card-brand-tag">{r.marca}</span>
+                        {r.imagen ? (
+                          <img src={r.imagen} alt={r.nombre} className="cat-card-img" />
+                        ) : (
+                          <>
+                            <span className="cat-card-partnum">Part Number</span>
+                            <span className="cat-card-code">{r.codigo || "—"}</span>
+                            <span className="cat-card-brand-tag">{r.marca}</span>
+                          </>
+                        )}
                       </Link>
                       <div className="cat-card-body">
                         <span className="cat-card-cat">{r.categoria}</span>

@@ -134,6 +134,9 @@ export default function Header() {
         <Link to="/novedades" onClick={() => setMobileOpen(false)}>
           Novedades
         </Link>
+        <Link to="/blog" onClick={() => setMobileOpen(false)}>
+          Blog
+        </Link>
         <Link to="/promociones" onClick={() => setMobileOpen(false)}>
           Promociones
         </Link>

@@ -50,20 +50,30 @@ export default function RepuestoDetalle() {
       <div className="page-body">
         <div className="detail-wrap">
           <div className="detail-media">
-            <span
-              style={{
-                fontSize: 11,
-                letterSpacing: 1,
-                color: "#bbb",
-                textTransform: "uppercase",
-              }}
-            >
-              Part Number
-            </span>
-            <span className="detail-code-box">{repuesto.codigo || "—"}</span>
-            <span style={{ fontSize: 12, fontWeight: 800, color: "#888" }}>
-              {repuesto.marca}
-            </span>
+            {repuesto.imagen ? (
+              <img
+                src={repuesto.imagen}
+                alt={repuesto.nombre}
+                className="detail-media-img"
+              />
+            ) : (
+              <>
+                <span
+                  style={{
+                    fontSize: 11,
+                    letterSpacing: 1,
+                    color: "#bbb",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Part Number
+                </span>
+                <span className="detail-code-box">{repuesto.codigo || "—"}</span>
+                <span style={{ fontSize: 12, fontWeight: 800, color: "#888" }}>
+                  {repuesto.marca}
+                </span>
+              </>
+            )}
           </div>
 
           <div className="detail-info">
@@ -168,9 +178,15 @@ export default function RepuestoDetalle() {
               {relacionados.map((r) => (
                 <div className="cat-card" key={r.id}>
                   <Link to={`/repuestos/${r.id}`} className="cat-card-media">
-                    <span className="cat-card-partnum">Part Number</span>
-                    <span className="cat-card-code">{r.codigo || "—"}</span>
-                    <span className="cat-card-brand-tag">{r.marca}</span>
+                    {r.imagen ? (
+                      <img src={r.imagen} alt={r.nombre} className="cat-card-img" />
+                    ) : (
+                      <>
+                        <span className="cat-card-partnum">Part Number</span>
+                        <span className="cat-card-code">{r.codigo || "—"}</span>
+                        <span className="cat-card-brand-tag">{r.marca}</span>
+                      </>
+                    )}
                   </Link>
                   <div className="cat-card-body">
                     <span className="cat-card-cat">{r.categoria}</span>

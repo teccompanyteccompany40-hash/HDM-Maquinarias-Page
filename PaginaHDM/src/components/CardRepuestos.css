@@ -57,6 +57,15 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.repuesto-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  background: #fff;
 }
 
 .repuesto-cat {

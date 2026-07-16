@@ -12,6 +12,8 @@ import MaquinariaDetalle from "./pages/MaquinariaDetalle";
 import Repuestos from "./pages/Repuestos";
 import RepuestoDetalle from "./pages/RepuestoDetalle";
 import Novedades from "./pages/Novedades";
+import Blog from "./pages/Blog";
+import BlogDetalle from "./pages/BlogDetalle";
 import Promociones from "./pages/Promociones";
 import Cotizacion from "./pages/Cotizacion";
 import Contacto from "./pages/Contacto";
@@ -44,6 +46,8 @@ function App() {
         <Route path="/repuestos" element={<Repuestos />} />
         <Route path="/repuestos/:id" element={<RepuestoDetalle />} />
         <Route path="/novedades" element={<Novedades />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetalle />} />
         <Route path="/promociones" element={<Promociones />} />
         <Route path="/cotizacion" element={<Cotizacion />} />
         <Route path="/contacto" element={<Contacto />} />

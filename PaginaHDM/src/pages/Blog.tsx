@@ -1,0 +1,103 @@
+import "./pages.css";
+import "./Blog.css";
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { Calendar, ArrowRight, BookOpen } from "lucide-react";
+import { blogPosts, categoriasBlog } from "../data/blog";
+
+export default function Blog() {
+  const [categoriaActiva, setCategoriaActiva] = useState("Todos");
+
+  const destacado = blogPosts.find((p) => p.destacado) ?? blogPosts[0];
+
+  const filtrados = useMemo(() => {
+    const base = blogPosts.filter((p) => p.id !== destacado.id);
+    if (categoriaActiva === "Todos") return base;
+    return base.filter((p) => p.categoria === categoriaActiva);
+  }, [categoriaActiva, destacado.id]);
+
+  return (
+    <>
+      <div className="page-banner">
+        <div className="page-banner-inner">
+          <div className="breadcrumb">
+            <Link to="/">Inicio</Link> / <span>Blog</span>
+          </div>
+          <h1>
+            Blog <span>PeruTractor</span>
+          </h1>
+          <p>
+            Guías técnicas, consejos de mantenimiento y novedades sobre repuestos y
+            maquinaria pesada.
+          </p>
+        </div>
+      </div>
+
+      <div className="page-body">
+        <Link to={`/blog/${destacado.id}`} className="blog-hero-card">
+          <div className="blog-hero-media">
+            <BookOpen size={40} />
+          </div>
+          <div className="blog-hero-body">
+            <span className="blog-hero-tag">{destacado.categoria}</span>
+            <h2>{destacado.titulo}</h2>
+            <p>{destacado.resumen}</p>
+            <span className="blog-hero-fecha">
+              <Calendar size={14} /> {destacado.fecha}
+            </span>
+            <span className="blog-hero-link">
+              Leer artículo <ArrowRight size={16} />
+            </span>
+          </div>
+        </Link>
+
+        <div className="blog-cat-filtros">
+          <button
+            className={`blog-cat-btn ${categoriaActiva === "Todos" ? "active" : ""}`}
+            onClick={() => setCategoriaActiva("Todos")}
+          >
+            Todos
+          </button>
+          {categoriasBlog.map((c) => (
+            <button
+              key={c}
+              className={`blog-cat-btn ${categoriaActiva === c ? "active" : ""}`}
+              onClick={() => setCategoriaActiva(c)}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+
+        <div className="blog-list-grid">
+          {filtrados.map((p) => (
+            <article className="blog-list-card" key={p.id}>
+              <Link to={`/blog/${p.id}`} className="blog-list-media">
+                <BookOpen size={28} />
+              </Link>
+              <div className="blog-list-body">
+                <span className="blog-list-tag">{p.categoria}</span>
+                <Link to={`/blog/${p.id}`}>
+                  <h3>{p.titulo}</h3>
+                </Link>
+                <p>{p.resumen}</p>
+                <div className="blog-list-footer">
+                  <span className="blog-list-fecha">
+                    <Calendar size={13} /> {p.fecha}
+                  </span>
+                  <Link to={`/blog/${p.id}`} className="blog-list-leer">
+                    Leer más <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {filtrados.length === 0 && (
+          <div className="empty-state">No hay artículos en esta categoría todavía.</div>
+        )}
+      </div>
+    </>
+  );
+}
