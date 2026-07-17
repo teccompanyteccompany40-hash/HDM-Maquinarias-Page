@@ -17,7 +17,6 @@
 .footer-logo {
   height: 42px;
   margin-bottom: 16px;
-  filter: brightness(0) invert(1);
 }
 
 .footer-col p {
@@ -110,4 +109,22 @@
     text-align: center;
     padding: 22px;
   }
+}
+
+.footer-link {
+  background: none;
+
+  border: none;
+
+  color: #aaa;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition: 0.25s;
+}
+
+.footer-link:hover {
+  color: var(--yellow);
 }
