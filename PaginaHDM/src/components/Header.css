@@ -31,6 +31,9 @@
   width: 100%;
   min-height: 110px;
 
+  position: relative;
+  overflow: hidden;
+
   background: var(--black);
 
   display: flex;
@@ -39,6 +42,32 @@
 
   padding: 14px 60px;
   gap: 24px;
+}
+
+.logo-bar::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../../public/textura.png");
+
+  background-repeat: repeat;
+
+  background-position: center;
+
+  background-size: cover;
+
+  opacity: 0.25;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.logo-bar > * {
+  position: relative;
+  z-index: 2;
 }
 
 .logo-bar-link {
