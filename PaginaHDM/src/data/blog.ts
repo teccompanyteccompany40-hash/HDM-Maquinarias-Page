@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     contenido: [
       "Elegir un filtro hidráulico incorrecto puede derivar en pérdida de presión, contaminación del sistema y desgaste prematuro de componentes.",
       "Antes de comprar, verifica siempre el código OEM del fabricante y compáralo contra el modelo de tu máquina, no solo contra el diámetro de la carcasa.",
-      "En PeruTractor validamos cada equivalencia con nuestra base técnica antes de recomendar un reemplazo alternativo.",
+      "En DH & DM Maquinarias SAC. validamos cada equivalencia con nuestra base técnica antes de recomendar un reemplazo alternativo.",
     ],
     imagen: "",
     destacado: true,
@@ -100,5 +100,5 @@ export const blogPosts: BlogPost[] = [
 ];
 
 export const categoriasBlog = Array.from(
-  new Set(blogPosts.map((p) => p.categoria))
+  new Set(blogPosts.map((p) => p.categoria)),
 );

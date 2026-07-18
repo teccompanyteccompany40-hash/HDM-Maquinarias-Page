@@ -10,7 +10,8 @@ export interface Novedad {
 export const novedades: Novedad[] = [
   {
     id: 1,
-    titulo: "PeruTractor lanza su línea propia de filtros HDM-Filter",
+    titulo:
+      "DH & DM Maquinarias SAC. lanza su línea propia de filtros HDM-Filter",
     categoria: "Producto propio",
     fecha: "10 jul. 2026",
     resumen:

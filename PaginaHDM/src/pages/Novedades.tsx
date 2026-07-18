@@ -12,10 +12,11 @@ export default function Novedades() {
             <Link to="/">Inicio</Link> / <span>Novedades</span>
           </div>
           <h1>
-            <span>Novedades</span> PeruTractor
+            <span>Novedades</span> DH & DM Maquinarias SAC.
           </h1>
           <p>
-            Conoce nuestros productos propios, mejoras y noticias sobre la empresa.
+            Conoce nuestros productos propios, mejoras y noticias sobre la
+            empresa.
           </p>
         </div>
       </div>
@@ -24,7 +25,14 @@ export default function Novedades() {
         <div className="novedades-grid">
           {novedades.map((n) => (
             <div className="novedad-card" key={n.id}>
-              <div className="novedad-media" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div
+                className="novedad-media"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 <Sparkles size={36} color="#f4c20d" />
               </div>
               <div className="novedad-body">

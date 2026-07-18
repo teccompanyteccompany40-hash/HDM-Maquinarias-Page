@@ -5,7 +5,7 @@ import { Search, ShoppingCart, ChevronDown, Menu, X } from "lucide-react";
 import { useCotizacion } from "../context/CotizacionContext";
 
 const nosotrosLinks = [
-  { label: "Acerca de PeruTractor", to: "/nosotros#acerca" },
+  { label: "Acerca de DH & DM Maquinarias SAC.", to: "/nosotros#acerca" },
   { label: "Sectores que atendemos", to: "/nosotros#sectores" },
   { label: "Responsabilidad social", to: "/nosotros#responsabilidad" },
   { label: "Trabaje con nosotros", to: "/nosotros#trabaje" },
@@ -49,7 +49,11 @@ export default function Header() {
     <header className="header-wrap">
       <div className="logo-bar">
         <Link to="/" className="logo-bar-link">
-          <img src="/logo.png" alt="PeruTractor" className="logo" />
+          <img
+            src="/logo.png"
+            alt="DH & DM Maquinarias SAC."
+            className="logo"
+          />
         </Link>
 
         <div className="logo-bar-right">
@@ -70,80 +74,88 @@ export default function Header() {
           </Link>
         </div>
 
-        <button className="burger" onClick={() => setMobileOpen((o) => !o)} aria-label="Menú">
+        <button
+          className="burger"
+          onClick={() => setMobileOpen((o) => !o)}
+          aria-label="Menú"
+        >
           {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
       <div className="header">
-      <nav className={`navbar ${mobileOpen ? "open" : ""}`}>
-        <Link to="/" onClick={() => setMobileOpen(false)}>
-          Inicio
-        </Link>
-
-        <div
-          className="nav-dropdown-wrap"
-          onMouseEnter={() => setNosotrosOpen(true)}
-          onMouseLeave={() => setNosotrosOpen(false)}
-        >
-          <Link to="/nosotros" className="nav-drop-trigger">
-            Nosotros <ChevronDown size={15} />
+        <nav className={`navbar ${mobileOpen ? "open" : ""}`}>
+          <Link to="/" onClick={() => setMobileOpen(false)}>
+            Inicio
           </Link>
-          {nosotrosOpen && (
-            <div className="dropdown-menu">
-              <div className="dropdown-menu-inner dropdown-simple">
-                {nosotrosLinks.map((l) => (
-                  <Link key={l.label} to={l.to} onClick={() => setMobileOpen(false)}>
-                    {l.label}
-                  </Link>
-                ))}
+
+          <div
+            className="nav-dropdown-wrap"
+            onMouseEnter={() => setNosotrosOpen(true)}
+            onMouseLeave={() => setNosotrosOpen(false)}
+          >
+            <Link to="/nosotros" className="nav-drop-trigger">
+              Nosotros <ChevronDown size={15} />
+            </Link>
+            {nosotrosOpen && (
+              <div className="dropdown-menu">
+                <div className="dropdown-menu-inner dropdown-simple">
+                  {nosotrosLinks.map((l) => (
+                    <Link
+                      key={l.label}
+                      to={l.to}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {l.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
 
-        <Link to="/maquinaria" onClick={() => setMobileOpen(false)}>
-          Maquinaria
-        </Link>
-
-        <div
-          className="nav-dropdown-wrap"
-          onMouseEnter={() => setRepuestosOpen(true)}
-          onMouseLeave={() => setRepuestosOpen(false)}
-        >
-          <Link to="/repuestos" className="nav-drop-trigger">
-            Repuestos <ChevronDown size={15} />
+          <Link to="/maquinaria" onClick={() => setMobileOpen(false)}>
+            Maquinaria
           </Link>
-          {repuestosOpen && (
-            <div className="dropdown-menu">
-              <div className="dropdown-menu-inner dropdown-grid">
-                {repuestosCategorias.map((c) => (
-                  <Link
-                    key={c}
-                    to={`/repuestos?categoria=${encodeURIComponent(c)}`}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {c}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
 
-        <Link to="/novedades" onClick={() => setMobileOpen(false)}>
-          Novedades
-        </Link>
-        <Link to="/blog" onClick={() => setMobileOpen(false)}>
-          Blog
-        </Link>
-        <Link to="/promociones" onClick={() => setMobileOpen(false)}>
-          Promociones
-        </Link>
-        <Link to="/contacto" onClick={() => setMobileOpen(false)}>
-          Contacto
-        </Link>
-      </nav>
+          <div
+            className="nav-dropdown-wrap"
+            onMouseEnter={() => setRepuestosOpen(true)}
+            onMouseLeave={() => setRepuestosOpen(false)}
+          >
+            <Link to="/repuestos" className="nav-drop-trigger">
+              Repuestos <ChevronDown size={15} />
+            </Link>
+            {repuestosOpen && (
+              <div className="dropdown-menu">
+                <div className="dropdown-menu-inner dropdown-grid">
+                  {repuestosCategorias.map((c) => (
+                    <Link
+                      key={c}
+                      to={`/repuestos?categoria=${encodeURIComponent(c)}`}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {c}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <Link to="/novedades" onClick={() => setMobileOpen(false)}>
+            Novedades
+          </Link>
+          <Link to="/blog" onClick={() => setMobileOpen(false)}>
+            Blog
+          </Link>
+          <Link to="/promociones" onClick={() => setMobileOpen(false)}>
+            Promociones
+          </Link>
+          <Link to="/contacto" onClick={() => setMobileOpen(false)}>
+            Contacto
+          </Link>
+        </nav>
       </div>
     </header>
   );

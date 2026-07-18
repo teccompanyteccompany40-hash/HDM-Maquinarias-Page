@@ -24,7 +24,7 @@ export default function Nosotros() {
             <Link to="/">Inicio</Link> / <span>Nosotros</span>
           </div>
           <h1>
-            Conoce <span>PeruTractor</span>
+            Conoce <span>DH & DM Maquinarias SAC.</span>
           </h1>
           <p>
             Más de 15 años impulsando la operación de nuestros clientes con
@@ -36,7 +36,7 @@ export default function Nosotros() {
 
       <section id="acerca" className="nosotros-section">
         <div className="nosotros-section-inner">
-          <span className="tag">Acerca de PeruTractor</span>
+          <span className="tag">Acerca de DH & DM Maquinarias SAC.</span>
           <h2 style={{ fontSize: 28, fontWeight: 800, margin: "10px 0 16px" }}>
             Quiénes somos
           </h2>
@@ -48,7 +48,7 @@ export default function Nosotros() {
               marginBottom: 10,
             }}
           >
-            PeruTractor es una empresa peruana especializada en la
+            DH & DM Maquinarias SAC. es una empresa peruana especializada en la
             comercialización de repuestos y maquinaria pesada para los sectores
             de minería, construcción, transporte e industria. Contamos con un
             amplio stock de piezas originales y alternativas, así como
@@ -187,7 +187,8 @@ export default function Nosotros() {
             }}
           >
             Buscamos personas comprometidas con la excelencia y el trabajo en
-            equipo. Si quieres formar parte de PeruTractor, envíanos tu CV.
+            equipo. Si quieres formar parte de DH & DM Maquinarias SAC.,
+            envíanos tu CV.
             <em> (Contenido de referencia — a completar.)</em>
           </p>
           <Link
