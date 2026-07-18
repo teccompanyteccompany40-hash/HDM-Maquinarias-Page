@@ -47,7 +47,8 @@ export default function Contacto() {
               <Mail size={20} />
               <div>
                 <strong>Correo corporativo</strong>
-                <span>info@DH & DM Maquinarias SAC.
+                <span>info@DH & DM Maquinarias SAC. </span>
+              </div>
             </div>
             <div className="contacto-info-item">
               <MapPin size={20} />

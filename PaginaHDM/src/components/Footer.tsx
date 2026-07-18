@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-col">
-          <img src="../../public/logo.png" className="footer-logo" />
+          <img src="logo.png" className="footer-logo" />
           <p>
             Especialistas en repuestos y maquinaria pesada. Calidad, respaldo y
             disponibilidad para tu operación.

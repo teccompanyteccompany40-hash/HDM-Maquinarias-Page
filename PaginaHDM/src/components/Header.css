@@ -50,7 +50,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("../../public/textura.png");
+  background-image: url("/textura.png");
 
   background-repeat: repeat;
 
