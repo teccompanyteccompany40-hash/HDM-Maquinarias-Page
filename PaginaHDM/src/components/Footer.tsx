@@ -77,7 +77,7 @@ export default function Footer() {
           <h4>Contacto</h4>
           <ul className="footer-contact">
             <li>
-              <MapPin size={16} /> Sede Principal: Sr. Apurimas 1067 , Suliaca ,
+              <MapPin size={16} /> Sede Principal: Sr. Apurimas 1067 , Juliaca ,
               Puno
             </li>
             <li>
@@ -95,7 +95,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 PeruTractor. Todos los derechos reservados.</p>
+        <p>© 2026 DH & DM Maquinarias SAC. Todos los derechos reservados.</p>
         <div className="footer-legal">
           <button className="footer-link" onClick={() => setModal("terms")}>
             Términos
