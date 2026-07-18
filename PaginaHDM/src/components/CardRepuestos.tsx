@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Package } from "lucide-react";
 import repuestosData from "../data/repuestos.json";
 import { useCotizacion } from "../context/CotizacionContext";
+import { toast } from "react-toastify";
 
 interface Repuesto {
   id: number;
@@ -67,18 +68,24 @@ export default function CardRepuestos() {
                 <p>Código: {r.codigo || "—"}</p>
                 <button
                   className="btn-primary small"
-                  onClick={() =>
-                    agregarItem({
-                      tipo: "repuesto",
-                      id: r.id,
-                      nombre: r.nombre,
-                      codigo: r.codigo,
-                      marca: r.marca,
-                      categoria: r.categoria,
-                    })
-                  }
+                  onClick={() => {
+                    if (!yaAgregado) {
+                      agregarItem({
+                        tipo: "repuesto",
+                        id: r.id,
+                        nombre: r.nombre,
+                        codigo: r.codigo,
+                        marca: r.marca,
+                        categoria: r.categoria,
+                      });
+
+                      toast.success("¡Repuesto agregado correctamente!");
+                    } else {
+                      toast.success("¡Repuesto agregado correctamente!");
+                    }
+                  }}
                 >
-                  {yaAgregado ? "Agregado ✓" : "Cotizar"}
+                  <Package size={14} /> Cotizar
                 </button>
               </div>
             );

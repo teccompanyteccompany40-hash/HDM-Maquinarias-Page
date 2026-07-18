@@ -526,8 +526,8 @@
 }
 
 .detail-add-btn.added {
-  background: var(--black);
-  color: var(--yellow);
+  background: var(--yellow);
+  color: var(--black);
 }
 
 .related-section {

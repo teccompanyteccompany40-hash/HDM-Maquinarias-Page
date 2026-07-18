@@ -5,7 +5,7 @@ import { Package } from "lucide-react";
 import repuestosData from "../data/repuestos.json";
 import { useCotizacion } from "../context/CotizacionContext";
 import AvisoCompatibilidad from "../components/shared/AvisoCompatibilidad";
-
+import { toast } from "react-toastify";
 interface Repuesto {
   id: number;
   codigo: string;
@@ -146,24 +146,28 @@ export default function RepuestoDetalle() {
 
               <button
                 className={`detail-add-btn ${yaAgregado ? "added" : ""}`}
-                onClick={() =>
-                  agregarItem(
-                    {
-                      tipo: "repuesto",
-                      id: repuesto.id,
-                      nombre: repuesto.nombre,
-                      codigo: repuesto.codigo,
-                      marca: repuesto.marca,
-                      categoria: repuesto.categoria,
-                    },
-                    cantidad,
-                  )
-                }
+                onClick={() => {
+                  if (!yaAgregado) {
+                    agregarItem(
+                      {
+                        tipo: "repuesto",
+                        id: repuesto.id,
+                        nombre: repuesto.nombre,
+                        codigo: repuesto.codigo,
+                        marca: repuesto.marca,
+                        categoria: repuesto.categoria,
+                      },
+                      cantidad,
+                    );
+
+                    toast.success("¡Repuesto agregado correctamente!");
+                  } else {
+                    toast.success("¡Repuesto agregado correctamente!");
+                  }
+                }}
               >
                 <Package size={17} />{" "}
-                {yaAgregado
-                  ? "Agregado a la cotización ✓"
-                  : "Agregar a cotización"}
+                {"Agregar a cotización"}
               </button>
             </div>
 
