@@ -7,6 +7,11 @@ export default function Novedades() {
   return (
     <>
       <div className="page-banner">
+        <div
+          className="page-banner-img"
+          style={{ backgroundImage: "url('/banners/novedades-banner.jpg')" }}
+        />
+        <div className="page-banner-overlay" />
         <div className="page-banner-inner">
           <div className="breadcrumb">
             <Link to="/">Inicio</Link> / <span>Novedades</span>

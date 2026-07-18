@@ -1136,3 +1136,28 @@
         font-size: 13px;
         color: #888;
     }
+
+.page-banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 100deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.82) 40%, rgba(10, 10, 10, 0.45) 75%, rgba(10, 10, 10, 0.25) 100% );
+    z-index: 1;
+}
+
+.page-banner-inner {
+    position: relative;
+    z-index: 2;
+}
