@@ -21,6 +21,12 @@ export default function Promociones() {
       <div className="page-body">
         {promociones.map((p) => (
           <div className={`promo-card ${p.destacado ? "featured" : ""}`} key={p.id}>
+            {p.imagen && (
+              <div
+                className="promo-media"
+                style={{ backgroundImage: `url(${p.imagen})` }}
+              />
+            )}
             <div className="promo-content">
               <Tag size={22} color="#f4c20d" style={{ marginBottom: 10 }} />
               <h3>{p.titulo}</h3>

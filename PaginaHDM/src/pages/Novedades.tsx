@@ -12,7 +12,7 @@ export default function Novedades() {
             <Link to="/">Inicio</Link> / <span>Novedades</span>
           </div>
           <h1>
-            <span>Novedades</span> DH & DM Maquinarias SAC.
+            <span>Novedades</span> DH & DM Maquinarias
           </h1>
           <p>
             Conoce nuestros productos propios, mejoras y noticias sobre la
@@ -27,13 +27,17 @@ export default function Novedades() {
             <div className="novedad-card" key={n.id}>
               <div
                 className="novedad-media"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                style={
+                  n.imagen
+                    ? { backgroundImage: `url(${n.imagen})` }
+                    : undefined
+                }
               >
-                <Sparkles size={36} color="#f4c20d" />
+                {!n.imagen && (
+                  <div className="novedad-media-fallback">
+                    <Sparkles size={36} color="#f4c20d" />
+                  </div>
+                )}
               </div>
               <div className="novedad-body">
                 <div className="novedad-meta">
