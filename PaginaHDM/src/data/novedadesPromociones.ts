@@ -20,11 +20,12 @@ export const novedades: Novedad[] = [
   },
   {
     id: 2,
-    titulo: "Ampliamos nuestro almacén en La Victoria",
+    titulo: "Ampliamos nuestros almacenes en la ciudad de Juliaca",
     categoria: "Empresa",
     fecha: "02 jul. 2026",
     resumen:
-      "Duplicamos la capacidad de nuestro almacén de repuestos para reducir los tiempos de entrega a nuestros clientes en Lima y provincias.",
+      "Duplicamos la capacidad de nuestro almacén de repuestos para brindar una mejor disponibilidad de productos y reducir los tiempos de atención para nuestros clientes.",
+
     imagen: "/novedades/almacen-la-victoria.jpg",
   },
   {
@@ -56,11 +57,12 @@ export const novedades: Novedad[] = [
   },
   {
     id: 6,
-    titulo: "Alianza con talleres autorizados en Arequipa y Cusco",
+    titulo: "Mayor disponibilidad de repuestos en Juliaca",
     categoria: "Empresa",
     fecha: "15 may. 2026",
     resumen:
-      "Sumamos dos nuevos talleres aliados en el sur del país para brindar soporte técnico e instalación de repuestos más cerca de tu operación.",
+      "Ampliamos nuestro inventario para mantener un mayor stock de repuestos y atender los pedidos de nuestros clientes de forma más rápida y eficiente, con envíos a nivel nacional.",
+
     imagen: "/novedades/camion-minero-cat-797f.jpg",
   },
 ];
@@ -110,9 +112,10 @@ export const promociones: Promocion[] = [
   },
   {
     id: 5,
-    titulo: "Diagnóstico gratuito para clientes con flota de 5+ equipos",
+    titulo: "Descuento por la compra de más de 10 baldes de aceite de motor (15W-40)",
     descripcion:
-      "Empresas con flotas grandes acceden a una evaluación técnica sin costo para planificar su mantenimiento anual.",
+      "Aprovecha descuentos especiales en compras por volumen y reduce los costos de mantenimiento de tu maquinaria.",
+
     vigencia: "Válido hasta el 30 de agosto de 2026",
     imagen: "/novedades/excavadora-cat-6060.jpg",
   },
