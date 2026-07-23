@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-col">
-          <img src="logo.png" className="footer-logo" />
+          <img src="/logo.png" className="footer-logo" alt="DH & DM Maquinarias" />
           <p>
             Especialistas en repuestos y maquinaria pesada. Calidad, respaldo y
             disponibilidad para tu operación.
@@ -47,6 +47,9 @@ export default function Footer() {
               <Link to="/novedades">Novedades</Link>
             </li>
             <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li>
               <Link to="/promociones">Promociones</Link>
             </li>
             <li>
@@ -77,18 +80,18 @@ export default function Footer() {
           <h4>Contacto</h4>
           <ul className="footer-contact">
             <li>
-              <MapPin size={16} /> Sede Principal: Sr. Apurimas 1067 , Juliaca ,
+              <MapPin size={16} /> Sede Principal: Jr. Apurímac 1067, Juliaca,
               Puno
             </li>
             <li>
-              <Clock10Icon size={16} /> Atencion: Lunes a Viernes 8am-7pm
+              <Clock10Icon size={16} /> Atención: Lunes a Viernes 8am-7pm ·
               Sábados 8am-5pm
             </li>
             <li>
-              <Phone size={16} /> +51 977272747
+              <Phone size={16} /> +51 977 272 747
             </li>
             <li>
-              <Mail size={16} /> info@DH&DM.com
+              <Mail size={16} /> info@dhdmmaquinarias.com
             </li>
           </ul>
         </div>

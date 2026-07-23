@@ -1,6 +1,8 @@
 import "./TablonAnuncios.css";
 import { useEffect, useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { promociones } from "../data/novedadesPromociones";
 
 type Slide = {
   imagen: string;
@@ -11,8 +13,8 @@ type Slide = {
 const slides: Slide[] = [
   {
     imagen: "/anuncios/slide-1.jpg",
-    titulo: "Nuevo stock de repuestos",
-    texto: "Excavadoras Komatsu y Caterpillar disponibles en almacén.",
+    titulo: "Excavadoras Caterpillar",
+    texto: "Nuevo stock de equipos.",
   },
   {
     imagen: "/anuncios/slide-2.jpg",
@@ -21,18 +23,19 @@ const slides: Slide[] = [
   },
   {
     imagen: "/anuncios/slide-3.jpg",
-    titulo: "Despacho a todo el Perú",
-    texto: "Entregas garantizadas en 24 - 48 horas.",
+    titulo: "Envíos a todo el Perú",
+    texto: "Envíos en menos de 24 horas.",
   },
   {
     imagen: "/anuncios/slide-4.jpg",
-    titulo: "Servicio técnico especializado",
-    texto: "Soporte en Arequipa, Lima y provincias.",
+    titulo: "Atención Personalizada",
+    texto: "Asesoría Comercial.",
   },
 ];
 
 export default function TablonAnuncios() {
   const [activo, setActivo] = useState(0);
+  const [promoIndex, setPromoIndex] = useState(0);
 
   const siguiente = useCallback(() => {
     setActivo((a) => (a + 1) % slides.length);
@@ -46,6 +49,16 @@ export default function TablonAnuncios() {
     const id = setInterval(siguiente, 5000);
     return () => clearInterval(id);
   }, [siguiente]);
+
+  useEffect(() => {
+    if (promociones.length === 0) return;
+    const id = setInterval(() => {
+      setPromoIndex((i) => (i + 1) % promociones.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, []);
+
+  const promoActual = promociones[promoIndex];
 
   return (
     <section className="tablon">
@@ -64,6 +77,20 @@ export default function TablonAnuncios() {
           </div>
         ))}
       </div>
+
+      <Link to="/promociones" className="tablon-more-btn">
+        Ver promociones <ChevronRight size={16} />
+      </Link>
+
+      {promoActual && (
+        <div className="tablon-promo-mini">
+          <span className="tablon-promo-mini-tag">Promo</span>
+          <p key={promoActual.id} className="tablon-promo-mini-text">
+            {promoActual.titulo}
+          </p>
+          <span className="tablon-promo-mini-vigencia">{promoActual.vigencia}</span>
+        </div>
+      )}
 
       <button className="tablon-arrow left" onClick={anterior} aria-label="Anterior">
         <ChevronLeft size={22} />

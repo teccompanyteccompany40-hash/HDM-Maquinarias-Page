@@ -7,6 +7,11 @@ export default function Promociones() {
   return (
     <>
       <div className="page-banner">
+        <div
+          className="page-banner-img"
+          style={{ backgroundImage: "url('/banners/promociones-banner.jpg')" }}
+        />
+        <div className="page-banner-overlay" />
         <div className="page-banner-inner">
           <div className="breadcrumb">
             <Link to="/">Inicio</Link> / <span>Promociones</span>
@@ -21,6 +26,12 @@ export default function Promociones() {
       <div className="page-body">
         {promociones.map((p) => (
           <div className={`promo-card ${p.destacado ? "featured" : ""}`} key={p.id}>
+            {p.imagen && (
+              <div
+                className="promo-media"
+                style={{ backgroundImage: `url(${p.imagen})` }}
+              />
+            )}
             <div className="promo-content">
               <Tag size={22} color="#f4c20d" style={{ marginBottom: 10 }} />
               <h3>{p.titulo}</h3>

@@ -40,21 +40,21 @@ export default function Contacto() {
               <Phone size={20} />
               <div>
                 <strong>Líneas directas / WhatsApp</strong>
-                <span>(01) 4341400 · +51 924 877 117</span>
+                <span>+51 977 272 747</span>
               </div>
             </div>
             <div className="contacto-info-item">
               <Mail size={20} />
               <div>
                 <strong>Correo corporativo</strong>
-                <span>info@DH & DM Maquinarias SAC. </span>
+                <span>info@dhdmmaquinarias.com</span>
               </div>
             </div>
             <div className="contacto-info-item">
               <MapPin size={20} />
               <div>
-                <strong>Sedes operativas</strong>
-                <span>Ate (Sede Principal) · La Victoria (Sede Arriola)</span>
+                <strong>Sede operativa</strong>
+                <span>Juliaca (Sede Principal), Puno</span>
               </div>
             </div>
           </div>
@@ -126,26 +126,18 @@ export default function Contacto() {
           <div className="section-title">
             <span className="tag">Encuéntranos</span>
             <h2>
-              Nuestras <span>sedes</span>
+              Nuestra <span>sede</span>
             </h2>
-            <p>Visítanos en cualquiera de nuestros puntos de atención.</p>
+            <p>Visítanos en nuestro punto de atención.</p>
           </div>
 
           <div className="sedes-grid">
             <div className="sede-card">
               <MapPin size={22} />
-              <h4>Sede Principal — Ate</h4>
-              <p>Av. Nicolás Ayllón, Ate, Lima</p>
+              <h4>Nuestra Sede — Juliaca</h4>
+              <p>Jr. Apurímac 1067, Juliaca, Puno</p>
               <span>
-                Lun. a Vie. 8:00 am – 6:00 pm · Sáb. 8:00 am – 1:00 pm
-              </span>
-            </div>
-            <div className="sede-card">
-              <MapPin size={22} />
-              <h4>Sede Arriola — La Victoria</h4>
-              <p>Av. Nicolás Arriola, La Victoria, Lima</p>
-              <span>
-                Lun. a Vie. 8:00 am – 6:00 pm · Sáb. 8:00 am – 1:00 pm
+                Lun. a Vie. 8:00 am – 7:00 pm · Sáb. 8:00 am – 5:00 pm
               </span>
             </div>
           </div>

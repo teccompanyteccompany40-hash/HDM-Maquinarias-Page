@@ -50,7 +50,7 @@ export default function Header() {
       <div className="logo-bar">
         <Link to="/" className="logo-bar-link">
           <img
-            src="/logo.png"
+            src="/logo_prueba1.jpg"
             alt="DH & DM Maquinarias SAC."
             className="logo"
           />

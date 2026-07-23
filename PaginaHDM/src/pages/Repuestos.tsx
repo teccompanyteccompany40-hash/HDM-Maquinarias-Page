@@ -79,6 +79,10 @@ export default function Repuestos() {
   return (
     <>
       <div className="page-banner">
+        <div
+          className="page-banner-img"
+          style={{ backgroundImage: "url('/repuestos/repuestos-imagen-fondo.jpg')" }}
+        />
         <div className="page-banner-inner">
           <div className="breadcrumb">
             <Link to="/">Inicio</Link> / <span>Repuestos</span>

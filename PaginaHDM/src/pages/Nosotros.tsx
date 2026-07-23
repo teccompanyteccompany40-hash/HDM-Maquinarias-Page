@@ -24,19 +24,19 @@ export default function Nosotros() {
             <Link to="/">Inicio</Link> / <span>Nosotros</span>
           </div>
           <h1>
-            Conoce <span>DH & DM Maquinarias SAC.</span>
+            Conoce <span>DH & DM Maquinarias</span>
           </h1>
           <p>
-            Más de 15 años impulsando la operación de nuestros clientes con
-            repuestos y maquinaria de calidad, respaldo técnico y compromiso
-            responsable.
+            Más de 7 años brindando soluciones en maquinaria pesada y repuestos de
+            calidad para los sectores de construcción, minería e industria, con
+            atención personalizada y compromiso con nuestros clientes.
           </p>
         </div>
       </div>
 
       <section id="acerca" className="nosotros-section">
         <div className="nosotros-section-inner">
-          <span className="tag">Acerca de DH & DM Maquinarias SAC.</span>
+          <span className="tag">Acerca de DH & DM Maquinarias</span>
           <h2 style={{ fontSize: 28, fontWeight: 800, margin: "10px 0 16px" }}>
             Quiénes somos
           </h2>
@@ -48,15 +48,14 @@ export default function Nosotros() {
               marginBottom: 10,
             }}
           >
-            DH & DM Maquinarias SAC. es una empresa peruana especializada en la
-            comercialización de repuestos y maquinaria pesada para los sectores
-            de minería, construcción, transporte e industria. Contamos con un
-            amplio stock de piezas originales y alternativas, así como
-            maquinaria nueva, usada y reacondicionada, respaldada por un equipo
-            técnico especializado.{" "}
-            <em>
-              (Texto de referencia — información a completar por el cliente.)
-            </em>
+            DH & DM Maquinarias S.A.C. es una empresa peruana especializada en la
+            comercialización de maquinaria pesada y repuestos para los sectores de
+            construcción, minería, transporte e industria. Ofrecemos productos de
+            calidad, atención personalizada y asesoría comercial para ayudar a
+            nuestros clientes a encontrar la mejor solución para sus proyectos.
+            Además, gestionamos la importación de repuestos originales bajo pedido
+            para satisfacer necesidades específicas. Contamos con 5 almacenes en
+            Juliaca, Puno, para garantizar disponibilidad inmediata de stock.
           </p>
 
           <div className="nosotros-grid-3">
@@ -64,26 +63,29 @@ export default function Nosotros() {
               <Target size={26} color="#b8860b" />
               <h4 style={{ marginTop: 12 }}>Misión</h4>
               <p>
-                Proveer repuestos y maquinaria de calidad, con disponibilidad
-                inmediata y asesoría técnica, garantizando la continuidad
-                operativa de nuestros clientes.
+                Brindar maquinaria pesada y repuestos de calidad, ofreciendo una
+                atención confiable, soluciones confiables y entregas oportunas que
+                contribuyan al éxito y continuidad de las operaciones de nuestros
+                clientes.
               </p>
             </div>
             <div className="info-card">
               <Eye size={26} color="#b8860b" />
               <h4 style={{ marginTop: 12 }}>Visión</h4>
               <p>
-                Ser la empresa líder en el suministro de repuestos y maquinaria
-                pesada en el Perú, reconocida por su calidad, respaldo y
-                cercanía con el cliente.
+                Ser una empresa reconocida a nivel nacional por la calidad de
+                nuestros productos, la confianza de nuestros clientes y nuestro
+                compromiso con la excelencia en la comercialización de maquinaria
+                pesada y repuestos.
               </p>
             </div>
             <div className="info-card">
               <Award size={26} color="#b8860b" />
               <h4 style={{ marginTop: 12 }}>Compromiso</h4>
               <p>
-                Trabajamos bajo altos estándares de calidad, seguridad y ética
-                empresarial en cada proceso de nuestra operación.
+                Nos esforzamos por brindar una atención de calidad, ofreciendo
+                maquinaria y repuestos confiables, con responsabilidad y
+                puntualidad en cada pedido.
               </p>
             </div>
           </div>
@@ -186,18 +188,28 @@ export default function Nosotros() {
               marginBottom: 20,
             }}
           >
-            Buscamos personas comprometidas con la excelencia y el trabajo en
-            equipo. Si quieres formar parte de DH & DM Maquinarias SAC.,
-            envíanos tu CV.
-            <em> (Contenido de referencia — a completar.)</em>
+            ¿Te apasiona el sector de la maquinaria pesada y buscas crecer
+            profesionalmente? En DH & DM Maquinarias S.A.C. estamos en constante
+            búsqueda de personas comprometidas, responsables y con ganas de
+            aportar a nuestro equipo. Si deseas formar parte de nuestra empresa,
+            envíanos tu CV y estaremos encantados de conocerte.
           </p>
-          <Link
-            to="/contacto"
-            className="btn-primary"
-            style={{ display: "inline-block" }}
-          >
-            Enviar mi CV
-          </Link>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <Link
+              to="/contacto"
+              className="btn-primary"
+              style={{ display: "inline-block" }}
+            >
+              Enviar mi CV
+            </Link>
+            <Link
+              to="/contacto"
+              className="btn-outline-sm"
+              style={{ display: "inline-block" }}
+            >
+              Contáctanos
+            </Link>
+          </div>
         </div>
       </section>
 
