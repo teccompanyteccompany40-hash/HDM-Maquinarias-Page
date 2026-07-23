@@ -14,7 +14,7 @@ const slides: Slide[] = [
   {
     imagen: "/anuncios/slide-1.jpg",
     titulo: "Excavadoras Caterpillar",
-    texto: "Nuevo stock de equipos.",
+    texto: "Equipos de excavación de alto rendimiento para tu operación.",
   },
   {
     imagen: "/anuncios/slide-2.jpg",
@@ -23,8 +23,8 @@ const slides: Slide[] = [
   },
   {
     imagen: "/anuncios/slide-3.jpg",
-    titulo: "Envíos a todo el Perú",
-    texto: "Envíos en menos de 24 horas.",
+    titulo: "Repuestos para todo tipo de obra",
+    texto: "Desde movimiento de tierras hasta demolición.",
   },
   {
     imagen: "/anuncios/slide-4.jpg",
