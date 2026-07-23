@@ -13,8 +13,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TablonAnuncios />
       <MarcasAsociadas />
+      <TablonAnuncios />
+
       <ProductosDestacados />
       <CardRepuestos />
       <MaquinariaDestacada />
