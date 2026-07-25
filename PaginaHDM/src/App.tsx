@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import FloatingContacts from "./components/FloatingContacts";
 import Home from "./pages/Home";
 import Nosotros from "./pages/Nosotros";
+import SectorDetalle from "./pages/SectorDetalle";
 import Maquinaria from "./pages/Maquinaria";
 import MaquinariaDetalle from "./pages/MaquinariaDetalle";
 import Repuestos from "./pages/Repuestos";
@@ -41,6 +42,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/nosotros/sectores/:slug" element={<SectorDetalle />} />
         <Route path="/maquinaria" element={<Maquinaria />} />
         <Route path="/maquinaria/:id" element={<MaquinariaDetalle />} />
         <Route path="/repuestos" element={<Repuestos />} />

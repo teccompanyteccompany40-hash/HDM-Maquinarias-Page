@@ -71,11 +71,24 @@
 }
 
 .footer-contact li {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-contact li,
+.footer-contact li a {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+}
+
+.footer-contact a {
   color: #aaa;
+  transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+  color: var(--yellow);
 }
 
 .footer-contact svg {

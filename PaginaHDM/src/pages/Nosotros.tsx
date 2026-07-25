@@ -18,7 +18,7 @@ import {
 export default function Nosotros() {
   return (
     <>
-      <div className="page-banner">
+      <div className="page-banner page-banner-nosotros">
         <div className="page-banner-inner">
           <div className="breadcrumb">
             <Link to="/">Inicio</Link> / <span>Nosotros</span>

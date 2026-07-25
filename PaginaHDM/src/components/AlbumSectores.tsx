@@ -1,11 +1,6 @@
 import "./AlbumSectores.css";
-import { Mountain, HardHat, Truck } from "lucide-react";
-
-const sectores = [
-  { icon: Mountain, nombre: "Minería" },
-  { icon: HardHat, nombre: "Construcción" },
-  { icon: Truck, nombre: "Transporte" },
-];
+import { Link } from "react-router-dom";
+import { sectores } from "../data/sectores";
 
 export default function AlbumSectores() {
   return (
@@ -21,10 +16,18 @@ export default function AlbumSectores() {
 
         <div className="sectores-grid">
           {sectores.map((s) => (
-            <div className="sector-card" key={s.nombre}>
-              <s.icon size={40} />
-              <h4>{s.nombre}</h4>
-            </div>
+            <Link
+              to={`/nosotros/sectores/${s.slug}`}
+              className="sector-card"
+              key={s.slug}
+              style={{ backgroundImage: `url(${s.imagen})` }}
+            >
+              <div className="sector-card-overlay" />
+              <div className="sector-card-content">
+                <h4>{s.nombre}</h4>
+                <span className="sector-card-cta">Ver por qué es importante</span>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

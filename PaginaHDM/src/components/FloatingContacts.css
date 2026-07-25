@@ -10,9 +10,11 @@
 }
 
 .fab-row {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
+  justify-content: flex-end;
 }
 
 .fab-popover {
@@ -30,10 +32,26 @@
   margin-bottom: 4px;
 }
 
-.fab-popover a {
+.fab-popover a,
+.fab-popover span {
+  display: block;
   font-weight: 700;
   color: var(--black);
   font-size: 15px;
+}
+
+.fab-popover-hover {
+  position: absolute;
+  right: 68px;
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition: 0.25s;
+}
+
+.fab-row:hover .fab-popover-hover {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .fab {
@@ -46,6 +64,7 @@
   justify-content: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   transition: 0.25s;
+  text-decoration: none;
 }
 
 .fab:hover {
@@ -53,8 +72,16 @@
 }
 
 .fab-chat {
-  background: var(--yellow);
+  background: var(--white);
   color: var(--black);
+  overflow: hidden;
+  padding: 0;
+}
+
+.fab-chat-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .fab-whatsapp {

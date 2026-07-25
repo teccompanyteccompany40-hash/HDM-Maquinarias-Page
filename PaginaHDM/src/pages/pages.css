@@ -7,6 +7,15 @@
   overflow: hidden;
 }
 
+.page-banner-nosotros {
+  background-image:
+    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.92) 30%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.15) 100%),
+    url("/nosotros/banner-fondo.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
 .page-banner::after {
   content: "";
   position: absolute;
@@ -539,6 +548,54 @@
   font-weight: 800;
   margin-bottom: 20px;
   color: var(--black);
+}
+
+/* ============================= */
+/* SECTOR DETALLE */
+/* ============================= */
+
+.sector-detalle-puntos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 10px 0 20px;
+}
+
+.sector-punto-card {
+  background: white;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.sector-punto-card svg {
+  color: var(--yellow);
+  margin-bottom: 14px;
+}
+
+.sector-punto-card h4 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.sector-punto-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.sector-detalle-otros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+@media (max-width: 900px) {
+  .sector-detalle-puntos {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ============================= */

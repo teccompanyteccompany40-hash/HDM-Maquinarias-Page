@@ -1,6 +1,6 @@
 import "./ChatBot.css";
 import { useState } from "react";
-import { Send, Bot, X } from "lucide-react";
+import { Send, X } from "lucide-react";
 
 type Mensaje = { autor: "bot" | "user"; texto: string };
 
@@ -39,7 +39,7 @@ const respuestasPredeterminadas: Record<string, string> = {
 
 export default function ChatBot({ onClose }: { onClose: () => void }) {
   const [mensajes, setMensajes] = useState<Mensaje[]>([
-    { autor: "bot", texto: "¡Hola! 👋 Soy el asistente virtual de HDM Maquinarias. ¿En qué puedo ayudarte?" },
+    { autor: "bot", texto: "¡Hola! 👋 Soy DoMi, el asistente virtual de HDM Maquinarias. ¿En qué puedo ayudarte?" },
   ]);
   const [input, setInput] = useState("");
 
@@ -62,10 +62,10 @@ export default function ChatBot({ onClose }: { onClose: () => void }) {
       <div className="chatbot-header">
         <div className="chatbot-header-info">
           <span className="chatbot-avatar">
-            <Bot size={26} />
+            <img src="/ia-mascota.png" alt="Asistente IA" />
           </span>
           <div>
-            <strong>Asistente HDM</strong>
+            <strong>Asistente DoMi</strong>
             <span>En línea</span>
           </div>
         </div>
