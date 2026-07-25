@@ -1,11 +1,11 @@
 import "./AlbumServicios.css";
-import { Wrench, Truck, ClipboardCheck, Headphones } from "lucide-react";
+import { Globe, Truck, ClipboardCheck, Headphones } from "lucide-react";
 
 const servicios = [
   {
-    icon: Wrench,
-    titulo: "Mantenimiento preventivo",
-    desc: "Diagnóstico y mantenimiento programado de maquinaria pesada.",
+    icon: Globe,
+    titulo: "Importación de Repuestos",
+    desc: "¿No encuentras tu repuesto? Nosotros lo importamos.",
   },
   {
     icon: Truck,

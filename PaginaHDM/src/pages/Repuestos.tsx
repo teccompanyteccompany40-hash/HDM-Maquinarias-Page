@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Package, Search } from "lucide-react";
 import repuestosData from "../data/repuestos.json";
 import { useCotizacion } from "../context/CotizacionContext";
+import { toast } from "react-toastify";
 
 interface Repuesto {
   id: number;
@@ -78,6 +79,10 @@ export default function Repuestos() {
   return (
     <>
       <div className="page-banner">
+        <div
+          className="page-banner-img"
+          style={{ backgroundImage: "url('/repuestos/repuestos-imagen-fondo.jpg')" }}
+        />
         <div className="page-banner-inner">
           <div className="breadcrumb">
             <Link to="/">Inicio</Link> / <span>Repuestos</span>
@@ -182,19 +187,25 @@ export default function Repuestos() {
                             Ver más
                           </Link>
                           <button
-                            className={`btn-add-quote ${yaAgregado ? "added" : ""}`}
-                            onClick={() =>
-                              agregarItem({
-                                tipo: "repuesto",
-                                id: r.id,
-                                nombre: r.nombre,
-                                codigo: r.codigo,
-                                marca: r.marca,
-                                categoria: r.categoria,
-                              })
-                            }
+                            className="btn-add-quote"
+                            onClick={() => {
+                              if (!yaAgregado) {
+                                agregarItem({
+                                  tipo: "repuesto",
+                                  id: r.id,
+                                  nombre: r.nombre,
+                                  codigo: r.codigo,
+                                  marca: r.marca,
+                                  categoria: r.categoria,
+                                });
+
+                                toast.success("¡Repuesto agregado correctamente!");
+                              } else {
+                                toast.success("¡Repuesto agregado correctamente!");
+                              }
+                            }}
                           >
-                            <Package size={14} /> {yaAgregado ? "Agregado" : "Cotizar"}
+                            <Package size={14} /> Cotizar
                           </button>
                         </div>
                       </div>

@@ -95,6 +95,16 @@ section {
   font-size: 16px;
 }
 
+.Toastify__toast--success {
+  background: #f5c518 !important; /* tu amarillo */
+  color: #000 !important; /* texto negro para que se lea bien */
+}
+
+.Toastify__progress-bar--success {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+
 @media (max-width: 768px) {
   .section-wrap {
     padding: 55px 22px;

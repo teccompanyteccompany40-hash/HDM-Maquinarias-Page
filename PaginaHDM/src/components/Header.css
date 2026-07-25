@@ -50,7 +50,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("../../public/textura.png");
+  background-image: url("/textura.png");
 
   background-repeat: repeat;
 
@@ -77,7 +77,10 @@
 }
 
 .logo {
+
   height: 82px;
+
+  height: 150px;
   width: auto;
   max-width: 320px;
   object-fit: contain;

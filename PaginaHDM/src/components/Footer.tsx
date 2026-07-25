@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-col">
-          <img src="../../public/logo.png" className="footer-logo" />
+          <img src="/logo.png" className="footer-logo" alt="DH & DM Maquinarias" />
           <p>
             Especialistas en repuestos y maquinaria pesada. Calidad, respaldo y
             disponibilidad para tu operación.
@@ -51,6 +51,9 @@ export default function Footer() {
               <Link to="/novedades">Novedades</Link>
             </li>
             <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li>
               <Link to="/promociones">Promociones</Link>
             </li>
             <li>
@@ -82,26 +85,26 @@ export default function Footer() {
           <ul className="footer-contact">
             <li>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Sr.+Apurimas+1067%2C+Suliaca%2C+Puno%2C+Peru"
+                href="https://www.google.com/maps/search/?api=1&query=Jr.+Apurimac+1067%2C+Juliaca%2C+Puno%2C+Peru"
                 target="_blank"
                 rel="noreferrer"
               >
-                <MapPin size={16} /> Sede Principal: Sr. Apurimas 1067 , Suliaca ,
+                <MapPin size={16} /> Sede Principal: Jr. Apurímac 1067, Juliaca,
                 Puno
               </a>
             </li>
             <li>
-              <Clock10Icon size={16} /> Atencion: Lunes a Viernes 8am-7pm
+              <Clock10Icon size={16} /> Atención: Lunes a Viernes 8am-7pm ·
               Sábados 8am-5pm
             </li>
             <li>
               <a href="tel:+51977272747" target="_blank" rel="noreferrer">
-                <Phone size={16} /> +51 977272747
+                <Phone size={16} /> +51 977 272 747
               </a>
             </li>
             <li>
-              <a href="mailto:info@DH&DM.com" target="_blank" rel="noreferrer">
-                <Mail size={16} /> info@DH&DM.com
+              <a href="mailto:info@dhdmmaquinarias.com" target="_blank" rel="noreferrer">
+                <Mail size={16} /> info@dhdmmaquinarias.com
               </a>
             </li>
           </ul>
@@ -109,7 +112,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 PeruTractor. Todos los derechos reservados.</p>
+        <p>© 2026 DH & DM Maquinarias SAC. Todos los derechos reservados.</p>
         <div className="footer-legal">
           <button className="footer-link" onClick={() => setModal("terms")}>
             Términos

@@ -24,11 +24,11 @@ export default function Blog() {
             <Link to="/">Inicio</Link> / <span>Blog</span>
           </div>
           <h1>
-            Blog <span>PeruTractor</span>
+            Blog <span>DH & DM Maquinarias SAC.</span>
           </h1>
           <p>
-            Guías técnicas, consejos de mantenimiento y novedades sobre repuestos y
-            maquinaria pesada.
+            Guías técnicas, consejos de mantenimiento y novedades sobre
+            repuestos y maquinaria pesada.
           </p>
         </div>
       </div>
@@ -95,7 +95,9 @@ export default function Blog() {
         </div>
 
         {filtrados.length === 0 && (
-          <div className="empty-state">No hay artículos en esta categoría todavía.</div>
+          <div className="empty-state">
+            No hay artículos en esta categoría todavía.
+          </div>
         )}
       </div>
     </>
