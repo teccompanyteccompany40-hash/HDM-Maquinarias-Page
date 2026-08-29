@@ -40,11 +40,11 @@ export default function FloatingContacts() {
         <div className="fab-row">
           <div className="fab-popover fab-popover-hover">
             <p>Escríbenos por WhatsApp</p>
-            <span>+51 954 123 456</span>
+            <span>+51 977 272 747</span>
           </div>
           <a
             className="fab fab-whatsapp"
-            href="https://wa.me/51954123456"
+            href="https://wa.me/51977272747"
             target="_blank"
             rel="noreferrer"
             title="WhatsApp"
@@ -58,11 +58,11 @@ export default function FloatingContacts() {
         <div className="fab-row">
           <div className="fab-popover fab-popover-hover">
             <p>Llámanos</p>
-            <span>+51 954 123 456</span>
+            <span>+51 977 272 747</span>
           </div>
           <a
             className="fab fab-phone"
-            href="tel:+51954123456"
+            href="tel:+51977272747"
             target="_blank"
             rel="noreferrer"
             title="Llamar"
