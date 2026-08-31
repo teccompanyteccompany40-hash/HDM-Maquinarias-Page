@@ -55,6 +55,17 @@
   letter-spacing: 0.5px;
   white-space: nowrap;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marca-logo {
+  height: 32px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
 }
 
 .marca-item:hover {

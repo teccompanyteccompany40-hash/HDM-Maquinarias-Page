@@ -58,7 +58,7 @@ export const maquinarias: Maquina[] = [
       { label: "Profundidad de excavación", valor: "6.62 m" },
       { label: "Horas de uso", valor: "7 100 h" },
     ],
-    imagen: "",
+    imagen: "/maquinaria/pc200-8.jpg",
     destacado: true,
   },
   {
