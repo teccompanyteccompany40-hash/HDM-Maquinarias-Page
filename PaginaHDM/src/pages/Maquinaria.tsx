@@ -144,7 +144,11 @@ export default function Maquinaria() {
                   return (
                     <div className="cat-card" key={m.id}>
                       <Link to={`/maquinaria/${m.id}`} className="cat-card-media">
-                        <Truck size={40} />
+                        {m.imagen ? (
+                          <img src={m.imagen} alt={m.nombre} className="cat-card-img" />
+                        ) : (
+                          <Truck size={40} />
+                        )}
                         <span className="cat-card-partnum">{m.condicion}</span>
                         <span className="cat-card-brand-tag">{m.marca}</span>
                       </Link>

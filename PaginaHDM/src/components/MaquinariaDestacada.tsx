@@ -21,7 +21,11 @@ export default function MaquinariaDestacada() {
           {destacadas.map((m) => (
             <Link to={`/maquinaria/${m.id}`} className="maq-destacada-card" key={m.id}>
               <div className="maq-destacada-media">
-                <Truck size={40} />
+                {m.imagen ? (
+                  <img src={m.imagen} alt={m.nombre} className="maq-destacada-img" />
+                ) : (
+                  <Truck size={40} />
+                )}
                 <span className={`maq-condicion ${m.condicion.toLowerCase()}`}>{m.condicion}</span>
               </div>
               <div className="maq-destacada-body">

@@ -32,6 +32,13 @@
   justify-content: center;
   position: relative;
   color: var(--yellow);
+  overflow: hidden;
+}
+
+.maq-destacada-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .maq-condicion {
